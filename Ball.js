@@ -7,15 +7,18 @@ class Ball {
         inertia: Infinity,
         restitution: 1.0
     }
-    this.body1= Bodies.circle(x,y,radius,options);
+    this.body1= Bodies.circle(200,100,20,options);
     World.add(world,this.body1);
-    
+    this.body1.position.x = 200 ;
+    this.body1.position.x = 100; 
+
+  
   }
   
 
   display() {
     rectMode(CENTER);
-    rect(this.body1.position.x,this.body1.position.y);
+    rect(200,100,20);
 
   }
 }

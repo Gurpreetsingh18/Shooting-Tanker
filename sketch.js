@@ -1,14 +1,15 @@
 
 const { Engine, World, Bodies, Body, Mouse, MouseConstraint, Constraint, Composite, Detector } = Matter;
 
+
 function setup() {
-    createCanvas(1200,800);
+    createCanvas(400,400);
     engine = Engine.create();
     world = engine.world;
-    ground = new Ground(1000,700,1000,10);
-    tanker = new Tanker(900,600,100,100);
-    shootingBall = new Ball(100,200,70,70);
-    canonBall = new Ball(300,400,80,80);
+    ground = new Ground (390,400,1200,100);
+    tanker = new Tanker(100,310,160,300);
+    shootBall = new Ball(100,200,100,300);
+    canonBall = new Ball(100, 300, 70, 70);
    
 }
 
@@ -16,12 +17,19 @@ function draw() {
 background(0);
 Engine.update(engine);
 ground.display();
-shootingBall.display();
-canonBall.display();
+shootBall.display();
 tanker.display();
+canonBall.display();
+
 }
 
 
-function keyReleased() {
-    // Call the shoot method for the cannon.
+
+class keyReleased {
+    constructor() {
+        if (keyReleased("enter")) {
+            canonBall = new Ball();
+            canonBall.display();
+        }
+    }
 }

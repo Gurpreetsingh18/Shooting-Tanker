@@ -1,5 +1,5 @@
 class CanonBall {
-  constructor(x, y) {
+  constructor(x,y,radius) {
     var options = {
       "density" :   1.5,
       "friction" : 1.0,
@@ -8,16 +8,15 @@ class CanonBall {
      
     }
     this.image = loadImage("assets/canonBall.png");
-    this.body1= Bodies.rectangle(x,y,width,height,options);
-    World.add(world,this.body1);
-    this.width = width;
-    this.height = height;
+    this.body1= Bodies.circle(200,100,20,options);
+    World.add(world,canonBall);
+    this.width = 20;
   }
 
   display(){
-    rectMode();
-    rect(this.body1.position.x,this.body1.position.y,this.width,this.height);
+    ellipseMode(RADIUS);
+    ellipse(200,100,20);
     
 
-  };
+  }
 };

@@ -1,4 +1,4 @@
-class ShootBall{
+class ShootBall extends Tanker{
     constructor(bodyA, pointB){
         var options = {
             bodyA: bodyA,
@@ -6,10 +6,9 @@ class ShootBall{
             stiffness: 0.04,
             length: 10
         }
-        this.body1= Bodies.circle(x,y,width,height,options);
-        World.add(world,this.body1);
-        this.width = width;
-        this.height = height;
+        ball = Bodies.circle(bodyA,pointB,options);
+        World.add(world,this.shootBall);
+       
 
     }
 
@@ -18,8 +17,8 @@ class ShootBall{
     shoot(){}
 
     display(){
-      rectMode(CENTER);
-      rect(this.body1.position.x,this.body1.position.y,this.width,this.height);
+        ellipseMode(RADIUS);
+        ellipse(ball.position.x,ball.position.y,20,20);
     }
 
 }
